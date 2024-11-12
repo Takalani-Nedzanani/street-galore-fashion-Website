@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './contexts/CartContext';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Category from './pages/Category';
+import Cart from './pages/Cart';
+import Footer from './components/Footer';
+import WomenCategory from './pages/WomenCategory';
+import KidsCategory from './pages/KidsCategory';
 
-function App() {
+const App = () => {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => setCart([...cart, product]);
+  const removeFromCart = (product) => setCart(cart.filter((item) => item !== product));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartProvider>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/category/:category" element={<Category addToCart={addToCart} />} />
+        <Route path="/women-category" element={<WomenCategory addToCart={addToCart} />} />
+        <Route path="/kids-category" element={<KidsCategory addToCart={addToCart} />} />
+        <Route path="/cart" element={<Cart cart={cart} removeFromCart={removeFromCart} />} />
+      </Routes>
+      <Footer/>
+    </Router>
+    </CartProvider>
   );
-}
+};
 
 export default App;
