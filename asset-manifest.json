@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/street-galore-fashion/static/css/main.c2f0dcb6.css",
+    "main.js": "/street-galore-fashion/static/js/main.67870c67.js",
+    "static/js/453.3e3ba906.chunk.js": "/street-galore-fashion/static/js/453.3e3ba906.chunk.js",
+    "index.html": "/street-galore-fashion/index.html",
+    "main.c2f0dcb6.css.map": "/street-galore-fashion/static/css/main.c2f0dcb6.css.map",
+    "main.67870c67.js.map": "/street-galore-fashion/static/js/main.67870c67.js.map",
+    "453.3e3ba906.chunk.js.map": "/street-galore-fashion/static/js/453.3e3ba906.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2f0dcb6.css",
+    "static/js/main.67870c67.js"
+  ]
+}
